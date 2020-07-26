@@ -57,6 +57,27 @@ navItems[3].textContent = siteContent['nav']['nav-item-4'];
 navItems[4].textContent = siteContent['nav']['nav-item-5'];
 navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
+// green text
+navItems.forEach((item) => (item.style.color = 'green'));
+
+// new items
+let nav = document.querySelector('nav');
+
+let newItem1 = document.createElement('a');
+let newItem2 = document.createElement('a');
+
+newItem1.textContent = 'Home';
+newItem2.textContent = 'Blog';
+
+newItem1.setAttribute('href', '#');
+newItem2.setAttribute('href', '#');
+
+nav.prepend(newItem1);
+nav.appendChild(newItem2);
+
+newItem1.style.color = 'green';
+newItem2.style.color = 'green';
+
 // cta
 let ctaHeading = document.querySelector('h1');
 let ctaButton = document.querySelector('button');
