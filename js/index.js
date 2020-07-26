@@ -42,6 +42,12 @@ const siteContent = {
   }
 };
 
+const updatedContent = {
+  cta: {
+    h1: 'DOM Is Very Cool!'
+  }
+};
+
 // Navigation
 
 // Example: Update the img src for the logo
@@ -87,6 +93,9 @@ ctaHeading.textContent = siteContent['cta']['h1'];
 ctaButton.textContent = siteContent['cta']['button'];
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
 
+ctaHeading.style.fontFamily = 'sans-serif';
+ctaButton.style.background = 'red';
+
 // Main Content
 let mainTitles = document.querySelectorAll('.main-content h4');
 let mainImg = document.getElementById('middle-img');
@@ -126,5 +135,15 @@ contactContent[2].textContent = siteContent['contact']['email'];
 
 // Footer
 let footerText = document.querySelector('footer p');
+let footer = document.querySelector('footer');
+let updateButton = document.createElement('button');
+
+updateButton.textContent = 'Update';
+footer.appendChild(updateButton);
+
+updateButton.addEventListener('click', function () {
+  ctaHeading.textContent = updatedContent['cta']['h1'];
+  mainContent.forEach((item) => (item.style.color = 'purple'));
+});
 
 footerText.textContent = siteContent['footer']['copyright'];
